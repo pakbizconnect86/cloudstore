@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CloudStore — Premium Audio, Honest Prices</title>
+<meta name="description" content="CloudStore — premium-styled TWS earbuds at honest prices. Fast shipping, easy returns." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Ambient background blobs (decorative, purely visual) -->
+<div class="bg-orbit" aria-hidden="true"><span class="b1"></span><span class="b2"></span></div>
+
+<!-- Promotional banner -->
+<div class="promo-strip">🔊 Free shipping on orders above Rs. 999 &nbsp;•&nbsp; <strong>Flat Rs. 100 off</strong> with code CLOUD100</div>
+
+<!-- ============ Sticky Navigation ============ -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>CloudStore</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#catalog" class="active">Shop</a>
+      <a href="index.html#features">Why Us</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="navSearchInput" placeholder="Search earbuds…" aria-label="Search products" />
+    </div>
+
+    <div class="nav-actions">
+      <div class="theme-toggle">
+        <button id="themeDark" aria-label="Dark mode">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button id="themeLight" aria-label="Light mode">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+        </button>
+      </div>
+      <button class="icon-btn" id="cartOpenBtn" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 2H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+      <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="pulse"></span> New drop · Air31 now available</div>
+      <h1>Sound that feels <span class="grad">premium.</span><br/>Priced like it isn't.</h1>
+      <p class="lede">CloudStore cuts the brand markup, not the build quality. Three earbuds, one honest shelf — pick the fit that matches how you listen.</p>
+      <div class="hero-cta">
+        <a href="#catalog" class="btn btn-primary">Shop earbuds</a>
+        <a href="#features" class="btn btn-ghost">Why CloudStore</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>12k+</b><span>Happy customers</span></div>
+        <div><b>4.3★</b><span>Average rating</span></div>
+        <div><b>7-day</b><span>Easy returns</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orb-ring r2"></div>
+      <div class="orb-ring r3"></div>
+      <div class="hero-card glass">
+        <img src="images/product-appro2.svg" alt="AirPods Pro 2 style earbuds" />
+        <div class="price-tag mono">Rs. 495</div>
+        <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Catalog ============ -->
+<section class="section" id="catalog">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>The current lineup</h2>
+        <p>Three earbuds. No filler. Everything in this section ships within 24 hours.</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="tws">TWS</button>
+        <button class="chip" data-filter="wireless">Wireless</button>
+        <button class="chip" data-filter="premium">Premium</button>
+        <button class="chip" data-filter="best">Best sellers</button>
+        <button class="chip" data-filter="new">New arrivals</button>
+      </div>
+      <div class="result-count" id="resultCount">3 products</div>
+    </div>
+
+    <div class="product-grid" id="productGrid"><!-- rendered by js/main.js --></div>
+  </div>
+</section>
+
+<!-- ============ Features ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Built around trust</h2>
+        <p>The parts of online shopping that actually matter to you.</p>
+      </div>
+    </div>
+    <div class="features">
+      <div class="feature glass">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 0 0-2-2h-3l-2-2h-2l-2 2H6a2 2 0 0 0-2 2v4"/><path d="M2 12h20l-2 8H4z"/></svg></div>
+        <h4>Fast dispatch</h4>
+        <p>Orders placed before 4 PM ship the same day from our regional hubs.</p>
+      </div>
+      <div class="feature glass">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg></div>
+        <h4>7-day returns</h4>
+        <p>Not happy with the fit or sound? Send it back, no questions asked.</p>
+      </div>
+      <div class="feature glass">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>Real-time support</h4>
+        <p>Chat with a human, not a script, before and after you buy.</p>
+      </div>
+      <div class="feature glass">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M5 6h9a4 4 0 0 1 0 8H6a4 4 0 0 0 0 8h11"/></svg></div>
+        <h4>Honest pricing</h4>
+        <p>No inflated MRPs slashed down — the price you see is the fair one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Newsletter CTA ============ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Get Rs. 100 off your first order</h2>
+      <p>Join the list for restock alerts and early access to new drops.</p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="you@example.com" required aria-label="Email address" />
+        <button class="btn-dark" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand"><span class="dot"></span>CloudStore</a>
+        <p style="margin-top:14px;">Premium-styled audio gear at prices that make sense. Based out of India, shipping nationwide.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Twitter / X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 3h3l-7.5 8.6L22 21h-6.6l-5.2-6.4L4.2 21H1l8-9.2L2 3h6.7l4.7 5.9z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.6C16.5 3.5 15.4 3.4 14.2 3.4c-2.6 0-4.4 1.6-4.4 4.5v2h-2.7v3.1h2.7V21z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="index.html#catalog">All earbuds</a></li>
+          <li><a href="index.html#catalog">Best sellers</a></li>
+          <li><a href="index.html#catalog">New arrivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="#">Shipping policy</a></li>
+          <li><a href="#">Returns &amp; refunds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Account</h5>
+        <ul>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="#" id="footerCartLink">View cart</a></li>
+          <li><a href="#">Track order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CloudStore. All rights reserved.</span>
+      <span>Made for people who just want good earbuds.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ Product detail modal ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal glass">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="modalBody"><!-- filled by js/main.js --></div>
+  </div>
+</div>
+
+<!-- ============ Cart drawer ============ -->
+<div class="cart-overlay" id="cartOverlay">
+  <aside class="cart-drawer">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" id="cartCloseBtn" aria-label="Close cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItemsList"><!-- filled by js/main.js --></div>
+    <div class="cart-foot">
+      <div class="cart-total-row"><span>Total</span><b id="cartTotalValue">Rs. 0</b></div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to checkout</a>
+    </div>
+  </aside>
+</div>
+
+<!-- ============ Toast ============ -->
+<div class="toast" id="toast"><span class="dot2"></span><span>Message</span></div>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
